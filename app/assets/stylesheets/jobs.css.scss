@@ -11,8 +11,6 @@ body {
   background-color: #ddd;
 }
 #container {
-  padding-top: 50px;
-  width: 1000px;
   margin: 0 auto;
 }
 #header {
@@ -22,7 +20,6 @@ body {
   text-align: center;
 }
 #content {
-  border: 2px solid $blau;
   padding: 10px;
   background-color: #fff;
   min-height: 500px;

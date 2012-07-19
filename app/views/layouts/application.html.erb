@@ -1,37 +1,54 @@
-<!-- Zum Erstellen eines Titels -->
-<% provide(:mainTitle, "Jobboerse") %>
-<!DOCTYPE html>
-<html>
-<head>
-  <title><%= yield(:mainTitle)%> | <%= @title%></title>
-  </title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
+  <!-- Zum Erstellen eines Titels -->
+  <% provide(:mainTitle, "Jobboerse") %>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title><%= yield(:mainTitle)%> | <%= @title%></title>
+    </title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
 </head>
 <body>
-<header class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "Start Seite", root_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Jobbs",  '#' %></li>
-          <li><%= link_to "Bewerber",    '#' %></li>
-          <li><%= link_to "Anmeldung", login_path %></li>
-          <li><%= link_to "Registrierung", users_path %></li>
-        </ul>
-      </nav>
+<div id="container">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+       <h1> <%= link_to "Jobboerse", root_path, id: "logo" %></h1>
+        <nav>
+          <ul class="nav pull-right">
+            <li><%= link_to "Jobbs",  '#' %></li>
+            <li><%= link_to "Bewerber",    '#' %></li>
+            <li><%= link_to "Anmeldung", login_path %></li>
+            <li><%= link_to "Registrierung", users_path %></li>
+          </ul>
+        </nav>
+        <form class="navbar-search pull-left">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+      </div>
     </div>
   </div>
-</header>
-
-<div class="container">
-  <!-- drecks ding yield läd alle anderen pages auf diese page........ -->
-  <%= yield %>
+  <script src="twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>
+  <script src="twitter-bootstrap-v2/docs/assets/js/bootstrap-dropdown.js"></script>
+  <script type="text/javascript">
+      (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+  </script>
+  <div id="content">
+    <%= yield %>
+  </div>
 </div>
 </body>
 </html>
