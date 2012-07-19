@@ -1,14 +1,61 @@
-<!DOCTYPE html>
-<html>
 <head>
-  <title>JobBoerse</title>
+  <title>Jobboerse - <%= @title || "Unbekannt"%></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="container">
+  <div id="header">
+    <h1>Jobboerse</h1>
+  </div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <ul class="nav">
+            <li class="active">
+              <a class="brand" href="#">Jobboerse</a>
+            </li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Jobsuche</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+          <ul class="nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Startseite <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Logout</a></li>
+                <li><a href="#">Sign in</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-search pull-left">
+            <input type="text" class="search-query" placeholder="Search">
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>
+    <script src="twitter-bootstrap-v2/docs/assets/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript">
+        (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+    </script>
+  <div id="content">
+    <%= yield %>
+  </div>
+</div>
 </body>
-</html>
+
