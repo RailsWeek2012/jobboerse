@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-JobBoerse::Application.load_tasks
+NavigationsBar::Application.load_tasks

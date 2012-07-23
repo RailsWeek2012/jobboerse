@@ -1,6 +1,15 @@
-JobBoerse::Application.routes.draw do
+NavigationsBar::Application.routes.draw do
 
-  root :to => "jobs#index"
+
+  root :to => "startpages#index"
+  resources :users, only: [:index, :create]
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+  resources :users
+  resources :sessions
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

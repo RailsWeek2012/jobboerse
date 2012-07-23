@@ -18,16 +18,12 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'bootstrap-sass', '~> 2.0.4.0'
 end
 
 gem 'jquery-rails'
-gem 'mailboxer'
-gem 'simple_form'
-gem 'haml-rails'
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -40,3 +36,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use debugger
 # gem 'debugger'
+gem 'uglifier', '>= 1.0.3'
+gem 'bootstrap-sass', '~> 2.0.4.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'sorcery'
