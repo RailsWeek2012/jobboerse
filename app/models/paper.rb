@@ -1,5 +1,5 @@
 class Paper < ActiveRecord::Base
-  attr_accessible :user_id, :email , :file;
-  belongs_to :user
-  mount_uploader :file, AttachmentUploader
+  belongs_to(:user)
+  attr_accessible :attachment, :name
+  mount_uploader :attachment, AttachmentUploader
 end
