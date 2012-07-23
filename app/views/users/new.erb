@@ -1,0 +1,39 @@
+<% @title = "Registration" %>
+
+<%= form_for (@user) do |f| %>
+    <% if @user.errors.any? %>
+        <div class="error_at_registration">
+          <h1>Somthing is wrong!</h1>
+
+          <ul>
+            <% for message in @user.errors.full_messages %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="email_field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="password_field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="password_confirm_field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <div class="check_box">
+      <%= f.select( "is_company", { "Bewerber" => "0", "Unternehmen" => "1"}) %>
+
+    </div>
+
+    <div class="action">
+      <%= f.submit %>
+    </div>
+<% end %>

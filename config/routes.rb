@@ -4,14 +4,8 @@ NavigationsBar::Application.routes.draw do
   devise_for :users
 
   root :to => "startpages#index"
+  resources :users
 
-  resources :conversations, only: [:index, :show, :new, :create] do
-    member do
-      post :reply
-      post :trash
-      post :untrash
-    end
-  end
 
 
 
