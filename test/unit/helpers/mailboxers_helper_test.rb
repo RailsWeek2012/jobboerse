@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class MailboxersHelperTest < ActionView::TestCase
+class ConversationsHelperTest < ActionView::TestCase
 end

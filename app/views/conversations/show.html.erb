@@ -1,0 +1,16 @@
+
+<!--Funzt -->
+
+
+<h1><%= conversation.subject%></h1>
+<ul>
+
+  <%= content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt|%>
+    <% message = receipt.message%>
+    <h2><%= message.subject%></h2>
+    <p><%= message.body%></p>
+      <!-- Rendert auf Ordner conversations/_form-->
+    <%= render 'messages/form', conversation: conversation%>
+
+    <% end %>
+</ul>

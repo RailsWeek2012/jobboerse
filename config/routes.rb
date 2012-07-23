@@ -5,9 +5,15 @@ NavigationsBar::Application.routes.draw do
 
   root :to => "startpages#index"
   resources :users
-  resources :mailboxers
+  resources :ConversationsController
 
-
+  resources :conversations, only: [:index, :show, :new, :create] do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end
 
 
 

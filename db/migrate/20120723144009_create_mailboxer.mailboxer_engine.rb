@@ -46,7 +46,7 @@ class CreateMailboxer < ActiveRecord::Migration
   	#Receipts
   	add_foreign_key "receipts", "notifications", :name => "receipts_on_notification_id"
   	#Messages  
-  	add_foreign_key "notifications", "conversations", :name => "notifications_on_conversation_id"
+  	add_foreign_key "notifications", "conversations1", :name => "notifications_on_conversation_id"
   end
   
   def self.down

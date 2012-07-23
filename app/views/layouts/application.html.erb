@@ -23,7 +23,7 @@
 
             <% if user_signed_in? %>
 
-                <li><%= link_to "MessageBox", '#' %></li>
+                <li><%= link_to "MessageBox", conversations_path%></li>
 
                 <% if current_user.is_company%>
                     <li><%= link_to "Profil", '#' %></li>
