@@ -1,6 +1,8 @@
 NavigationsBar::Application.routes.draw do
 
 
+  devise_for :users
+
   root :to => "startpages#index"
 
   resources :conversations, only: [:index, :show, :new, :create] do
