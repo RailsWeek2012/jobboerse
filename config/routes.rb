@@ -2,12 +2,15 @@ NavigationsBar::Application.routes.draw do
 
 
   root :to => "startpages#index"
-  resources :users, only: [:index, :create]
-  get "logout" => "sessions#destroy", :as => "logout"
-  get "login" => "sessions#new", :as => "login"
-  get "signup" => "users#new", :as => "signup"
-  resources :users
-  resources :sessions
+
+  resources :conversations, only: [:index, :show, :new, :create] do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end
+
 
 
 
