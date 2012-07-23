@@ -5,6 +5,7 @@ NavigationsBar::Application.routes.draw do
 
   root :to => "startpages#index"
   resources :users
+  resources :mailboxers
 
 
 
