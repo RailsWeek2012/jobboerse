@@ -1,0 +1,15 @@
+
+
+<%= form_for @paper, :html => {:multipart => true} do |f| %>
+    <%= f.hidden_field :user_id %>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.file_field :image %>
+    </p>
+
+    <p><%= f.submit %></p>
+<% end %>
+
