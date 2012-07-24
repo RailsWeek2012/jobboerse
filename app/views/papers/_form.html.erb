@@ -1,7 +1,7 @@
+<% @title = "Profil" %>
 
 
 <%= form_for @paper, :html => {:multipart => true} do |f| %>
-    <%= f.hidden_field :user_id %>
     <p>
       <%= f.label :name %><br />
       <%= f.text_field :name %>
