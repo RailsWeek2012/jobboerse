@@ -138,6 +138,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   bootstrap-sass (~> 2.0.4.0)
+  carrierwave
   coffee-rails (~> 3.2.1)
   debugger
   devise

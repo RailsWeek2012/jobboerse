@@ -6,6 +6,7 @@ NavigationsBar::Application.routes.draw do
   root :to => "startpages#index"
   resources :users
   resources :ConversationsController
+  resources :papers
 
   resources :conversations, only: [:index, :show, :new, :create] do
     member do

@@ -1,0 +1,3 @@
+class PapersController < ApplicationController
+
+end

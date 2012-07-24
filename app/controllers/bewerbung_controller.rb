@@ -1,0 +1,2 @@
+class BewerbungController < ApplicationController
+end
