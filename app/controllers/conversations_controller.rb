@@ -1,8 +1,8 @@
-class MailboxersController < ApplicationController
+class ConversationsController < ApplicationController
   before_filter :authenticate_user!
   helper_method :mailbox, :conversation
 
-  def new
+  def create
     recipient_emails = conversation_params(:recipients).split(',')
     recipients = User.where(email: recipient_emails).all
 
@@ -19,12 +19,12 @@ class MailboxersController < ApplicationController
 
   def trash
     conversation.move_to_trash(current_user)
-    redirect_to :mailboxers
+    redirect_to :conversations
   end
 
   def untrash
     conversation.untrash(current_user)
-    redirect_to :mailboxers
+    redirect_to :conversations
   end
 
   private
@@ -54,5 +54,4 @@ class MailboxersController < ApplicationController
       end
     end
   end
-
 end

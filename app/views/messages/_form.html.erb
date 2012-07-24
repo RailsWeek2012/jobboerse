@@ -1,0 +1,9 @@
+
+<p><%= link_to "Private Nachrichten", :conversations %></p>
+
+<%= simple_form_for :messages do |f| %>
+     <%= f.input :subject         %>
+    <%= f.input :body , :as => :text %>
+    <%= f.button :submit, class: 'btn-primary'%>
+    <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-danger'%>
+<% end %>

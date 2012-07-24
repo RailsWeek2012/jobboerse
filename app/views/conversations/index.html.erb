@@ -1,0 +1,18 @@
+<h1> Conversations </h1>
+
+<ul>
+  <h2> Inbox </h2>
+
+  <li><%=render mailbox.inbox %></li>
+
+  <h2> Sentbox  </h2>
+
+    <li><%=render mailbox.sentbox %> </li>
+
+       <h2> Trash     </h2>
+  <li><%= render mailbox.trash %> </li>
+
+
+  <li><%= link_to 'Start Conversation', :new_conversation%></li>
+
+</ul>
