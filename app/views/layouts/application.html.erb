@@ -16,7 +16,9 @@
       <div class="container">
        <h1> <%= link_to "Jobboerse", root_path, id: "logo" %></h1>
         <div id="actuser">
+          <% if user_signed_in? %>
           <p id="user"><%= current_user.email %></p>
+              <%end%>
         </div>
         <nav>
           <ul class="nav pull-right">
