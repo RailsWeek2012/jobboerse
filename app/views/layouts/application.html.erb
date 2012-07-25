@@ -62,19 +62,19 @@
 
                   <% if current_user.is_company%>
                       <li><%= link_to "Profil", '#' %></li>
-                      <li><%= link_to "Job-Erstellen", '#' %></li>
-                      <li><%= link_to "Job-View", '#' %></li>
+                      <li><%= link_to "Job-Erstellen", new_tender_path %></li>
+                      <li><%= link_to "Job-View", tenders_path %></li>
                       <li><%= link_to "Job-Bewerber",    '#' %></li>
                   <% else %>
                       <li><%= link_to "Profil", applications_path %></li>
-                      <li><%= link_to "Job's", '#' %></li>
+                      <li><%= link_to "Job's", tenders_show_all_path %></li>
 
                   <% end %>
 
                   <li><%= link_to "Abmelden", destroy_user_session_path, method: :delete %></li>
 
               <% else %>
-                  <li><%= link_to "Job's",  '#' %></li>
+                  <li><%= link_to "Job's",  tenders_show_all_path %></li>
                   <li><%= link_to "Anmeldung", new_user_session_path %></li>
                   <li><%= link_to "Registrierung", new_user_path %></li>
 

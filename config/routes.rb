@@ -1,5 +1,8 @@
 NavigationsBar::Application.routes.draw do
 
+  root :to => "startpages#index"
+
+  get "tenders/show_all" => "tenders#show_all"
 
   resources :tenders
 
@@ -7,7 +10,6 @@ NavigationsBar::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "startpages#index"
   resources :users
   resources :ConversationsController
   resources :papers

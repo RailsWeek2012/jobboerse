@@ -1,12 +1,14 @@
 class TendersController < ApplicationController
-  before_filter :authenticate_user!
+
+ # MORGEN FRAGEN
+ # before_filter :authenticate_user!
 
 
   # GET /tenders
   # GET /tenders.json
   def index
-    @tenders = current_user.tenders
 
+    @tenders = current_user.tenders
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +19,7 @@ class TendersController < ApplicationController
   # GET /tenders/1
   # GET /tenders/1.json
   def show
+
     @tender = Tender.find(params[:id])
 
     respond_to do |format|
@@ -86,9 +89,12 @@ class TendersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
   def show_all
 
-    @tenders = Tenders.all
+    @tender = Tender.all
+
+
 
   end
 
