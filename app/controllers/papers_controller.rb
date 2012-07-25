@@ -4,14 +4,16 @@ class PapersController < ApplicationController
     @paper = Paper.new(:name => params[:name])
   end
 
-  # def create
-#    @paper = Paper.new(params[:paper])
- #   if @paper.save
-#      flash[:notice] = "Successfully created gallery."
- #     redirect_to
- #   else
- #     render :action => 'new'
- #   end
-  #end
+   def create
+
+   @paper = Paper.new(params[:paper])
+
+    if @paper.save
+      flash[:notice] = "Bewerbung erfolgreich hochgeladen."
+      redirect_to root_path
+    else
+      render :action => 'new'
+    end
+ end
 
 end
