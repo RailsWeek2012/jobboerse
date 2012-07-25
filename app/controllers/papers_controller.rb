@@ -7,6 +7,10 @@ class PapersController < ApplicationController
    def create
 
    @paper = Paper.new(params[:paper])
+   @paper.user = current_user
+   @paper.application = Application.find(session[:application_id])
+   session[:application_id] = nil
+
 
     if @paper.save
       flash[:notice] = "Bewerbung erfolgreich hochgeladen."

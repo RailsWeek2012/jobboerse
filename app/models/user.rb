@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+  has_many(:applications)
   has_many(:papers)
   acts_as_messageable
 

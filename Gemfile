@@ -39,9 +39,10 @@ gem 'jquery-rails'
 # To use debugger
  gem 'debugger'
 gem 'uglifier', '>= 1.0.3'
-gem 'bootstrap-sass', '~> 2.0.4.0'
+#gem 'bootstrap-sass', '~> 2.0.4.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'devise'
 gem 'mailboxer'
 gem 'simple_form'
 gem 'carrierwave'
+gem "twitter-bootstrap-rails"

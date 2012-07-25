@@ -1,6 +1,8 @@
 NavigationsBar::Application.routes.draw do
 
 
+  resources :applications
+
   devise_for :users
 
   root :to => "startpages#index"

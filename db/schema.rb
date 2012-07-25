@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120724135241) do
+ActiveRecord::Schema.define(:version => 20120725101351) do
+
+  create_table "applications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "surname"
+    t.string   "firstname"
+    t.integer  "house_number"
+    t.integer  "postal_number"
+    t.integer  "phone"
+    t.integer  "mobile"
+    t.text     "application"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -40,9 +54,10 @@ ActiveRecord::Schema.define(:version => 20120724135241) do
   create_table "papers", :force => true do |t|
     t.string   "attachment"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "user_id"
+    t.integer  "application_id"
   end
 
   create_table "receipts", :force => true do |t|
