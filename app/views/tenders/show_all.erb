@@ -1,0 +1,22 @@
+%- model_class = Tender -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @tender.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:company_name) %>:</strong></dt>
+  <dd><%= @tender.company_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sector) %>:</strong></dt>
+  <dd><%= @tender.sector %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:subject) %>:</strong></dt>
+  <dd><%= @tender.subject %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dd><%= @tender.phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @tender.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contact) %>:</strong></dt>
+  <dd><%= @tender.contact %></dd>
+</dl>
+

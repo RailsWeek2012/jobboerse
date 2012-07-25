@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120725101351) do
+ActiveRecord::Schema.define(:version => 20120725131736) do
 
   create_table "applications", :force => true do |t|
     t.integer  "user_id"
@@ -73,6 +73,18 @@ ActiveRecord::Schema.define(:version => 20120725101351) do
   end
 
   add_index "receipts", ["notification_id"], :name => "index_receipts_on_notification_id"
+
+  create_table "tenders", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "company_name"
+    t.string   "sector"
+    t.string   "subject"
+    t.integer  "phone"
+    t.text     "description"
+    t.string   "contact"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many(:applications)
   has_many(:papers)
+  has_many(:tenders)
   acts_as_messageable
 
   # Include default devise modules. Others available are:

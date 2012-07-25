@@ -15,8 +15,8 @@
       <th><%= model_class.human_attribute_name(:phone) %></th>
       <th><%= model_class.human_attribute_name(:mobile) %></th>
       <th><%= model_class.human_attribute_name(:application) %></th>
+      <th><%= model_class.human_attribute_name(:uploads) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%= model_class.human_attribute_name(:upload) %></th>
 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -34,7 +34,7 @@
         <td><%= application.phone %></td>
         <td><%= application.mobile %></td>
         <td><%= application.application %></td>
-        <td><%= application.papers %></td>
+        <td><%= raw application.papers.map {|p| link_to p.name, p.attachment.url }.join(" ") %></td>
         <td><%=l application.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

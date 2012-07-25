@@ -1,6 +1,8 @@
 NavigationsBar::Application.routes.draw do
 
 
+  resources :tenders
+
   resources :applications
 
   devise_for :users

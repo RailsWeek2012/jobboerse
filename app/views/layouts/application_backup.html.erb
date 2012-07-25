@@ -1,0 +1,71 @@
+  <!-- Zum Erstellen eines Titels -->
+  <% provide(:mainTitle, "Jobboerse") %>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title><%= yield(:mainTitle)%> | <%= @title%></title>
+    </title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="container">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+       <h1> <%= link_to "Jobboerse", root_path, id: "logo" %></h1>
+        <div id="actuser">
+          <% if user_signed_in? %>
+          <p id="user"><%= current_user.email %></p>
+              <%end%>
+        </div>
+        <nav>
+          <ul class="nav pull-right">
+
+            <% if user_signed_in? %>
+
+                <li><%= link_to "MessageBox", conversations_path%></li>
+
+                <% if current_user.is_company%>
+                    <li><%= link_to "Profil", '#' %></li>
+                    <li><%= link_to "Job-Erstellen", '#' %></li>
+                    <li><%= link_to "Job-View", '#' %></li>
+                    <li><%= link_to "Job-Bewerber",    '#' %></li>
+                <% else %>
+                    <li><%= link_to "Profil", papers_path %></li>
+                    <li><%= link_to "Job's", '#' %></li>
+
+                <% end %>
+
+                <li><%= link_to "Abmelden", destroy_user_session_path, method: :delete %></li>
+
+            <% else %>
+                <li><%= link_to "Job's",  papers_path %></li>  #
+                <li><%= link_to "Anmeldung", new_user_session_path %></li>
+                <li><%= link_to "Registrierung", new_user_path %></li>
+
+            <% end %>
+
+
+
+          </ul>
+        </nav>
+        <form class="navbar-search pull-left">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <% if flash[:notice] %>
+        <p id="notice">
+          <%= flash[:notice] %>
+        </p>
+    <% end %>
+
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>
