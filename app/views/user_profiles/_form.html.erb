@@ -1,0 +1,22 @@
+<%= simple_form_for(@user_profile) do |f| %>
+  <%= f.error_notification %>
+
+    <div class="form-inputs" xmlns="http://www.w3.org/1999/html">
+    <%= f.input :name %>
+    <%= f.input :surname %>
+    <%= f.input :firstname %>
+    <%= f.input :street %>
+    <%= f.input :house_number %>
+    <%= f.input :postal_code %>
+    <%= f.input :city %>
+    <%= f.input :phone %>
+    <%= f.input :mobile %>
+    <%= f.input :email %>
+    <%= f.input :application %>
+    <%= f.input :user_id, :as => :hidden,:input_html =>{:value => current_user.id}%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -7,8 +7,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:notice] = "Signed up!"
-      redirect_to root_url
+      flash[:notice] = "Willkommen auf Jobboerse"
+
+      if current_user.is_company
+           redirect_to new_company_profile_path
+      else
+          redirect_to new_user_profile_path
+      end
     else
       render :new
     end

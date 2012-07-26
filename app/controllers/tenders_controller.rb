@@ -1,7 +1,7 @@
 class TendersController < ApplicationController
 
  # MORGEN FRAGEN
- # before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:show_all]
 
 
   # GET /tenders
@@ -33,6 +33,10 @@ class TendersController < ApplicationController
   def new
     @tender = Tender.new
 
+    @user = User.find(current_user.id)
+
+    @company_profile = @user.company_profile
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @tender }
@@ -49,6 +53,10 @@ class TendersController < ApplicationController
   def create
     @tender = Tender.new(params[:tender])
     @tender.user = current_user
+
+    @user = User.find(current_user.id)
+
+    @company_profile = @user.company_profile
 
     respond_to do |format|
       if @tender.save
@@ -93,8 +101,6 @@ class TendersController < ApplicationController
   def show_all
 
     @tender = Tender.all
-
-
 
   end
 

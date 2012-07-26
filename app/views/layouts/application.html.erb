@@ -61,13 +61,23 @@
                   <li><%= link_to "MessageBox", conversations_path%></li>
 
                   <% if current_user.is_company%>
-                      <li><%= link_to "Profil", '#' %></li>
+
+                      <% if current_user.company_profile.present?%>
+                      <li><%= link_to "Profil", companyprofile_path %></li>
                       <li><%= link_to "Job-Erstellen", new_tender_path %></li>
                       <li><%= link_to "Job-View", tenders_path %></li>
                       <li><%= link_to "Job-Bewerber",    '#' %></li>
+                      <% end %>
                   <% else %>
-                      <li><%= link_to "Profil", applications_path %></li>
+
+                      <% if current_user.user_profile.present?%>
+                          <li><%= link_to "Profil", userprofile_path %></li>
+
+                      <li><%= link_to "Bewerbungen",  applications_path %></li>
                       <li><%= link_to "Job's", tenders_show_all_path %></li>
+                      <% end %>
+
+
 
                   <% end %>
 

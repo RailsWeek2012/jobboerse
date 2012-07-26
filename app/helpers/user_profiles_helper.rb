@@ -1,0 +1,4 @@
+module UserProfilesHelper
+
+
+end

@@ -1,0 +1,43 @@
+<h1>Listing user_profiles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Firstname</th>
+    <th>Street</th>
+    <th>House number</th>
+    <th>Postal code</th>
+    <th>City</th>
+    <th>Phone</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Application</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_profiles.each do |user_profile| %>
+  <tr>
+    <td><%= user_profile.name %></td>
+    <td><%= user_profile.surname %></td>
+    <td><%= user_profile.firstname %></td>
+    <td><%= user_profile.street %></td>
+    <td><%= user_profile.house_number %></td>
+    <td><%= user_profile.postal_code %></td>
+    <td><%= user_profile.city %></td>
+    <td><%= user_profile.phone %></td>
+    <td><%= user_profile.mobile %></td>
+    <td><%= user_profile.email %></td>
+    <td><%= user_profile.application %></td>
+    <td><%= link_to 'Show', user_profile %></td>
+    <td><%= link_to 'Edit', edit_user_profile_path(user_profile) %></td>
+    <td><%= link_to 'Destroy', user_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User profile', new_user_profile_path %>

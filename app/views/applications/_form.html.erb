@@ -1,13 +1,17 @@
 <%= simple_form_for @application, :html => { :class => 'form-horizontal' } do |f| %>
 
-  <%= f.input :name %>
-  <%= f.input :surname %>
-  <%= f.input :firstname %>
-  <%= f.input :house_number %>
-  <%= f.input :postal_number %>
-  <%= f.input :phone %>
-  <%= f.input :mobile %>
-  <%= f.input :application %>
+  <%= f.input :name,:input_html =>{:value => @user_profile.name}%>
+  <%= f.input :surname ,:input_html =>{:value => @user_profile.surname}%>
+  <%= f.input :firstname ,:input_html =>{:value => @user_profile.firstname}%>
+  <%= f.input :street,:input_html =>{:value => @user_profile.street}%>
+  <%= f.input :house_number,:input_html =>{:value => @user_profile.house_number} %>
+    <%= f.input :postal_number ,:input_html =>{:value => @user_profile.postal_code}%>
+  <%= f.input :city ,:input_html =>{:value => @user_profile.city}%>
+  <%= f.input :phone ,:input_html =>{:value => @user_profile.phone}%>
+  <%= f.input :mobile ,:input_html =>{:value => @user_profile.mobile}%>
+  <%= f.input :email ,:input_html =>{:value => @user_profile.email}%>
+  <%= f.input :application,:input_html =>{:value => @user_profile.application} %>
+  <%= f.input :user_id, :as => :hidden,:input_html =>{:value => current_user.id}%>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

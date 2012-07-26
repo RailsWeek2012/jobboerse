@@ -1,7 +1,7 @@
 class PapersController < ApplicationController
 
 
-  def self.index
+  def index
     @paper = Paper.new(:name => params[:name])
   end
 

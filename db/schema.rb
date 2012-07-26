@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120725131736) do
+ActiveRecord::Schema.define(:version => 20120726141533) do
 
   create_table "applications", :force => true do |t|
     t.integer  "user_id"
@@ -25,6 +25,24 @@ ActiveRecord::Schema.define(:version => 20120725131736) do
     t.text     "application"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "email"
+    t.string   "street"
+    t.string   "city"
+  end
+
+  create_table "company_profiles", :force => true do |t|
+    t.string   "company_name"
+    t.string   "street"
+    t.integer  "house_number"
+    t.integer  "postal_code"
+    t.string   "city"
+    t.integer  "phone"
+    t.integer  "fax"
+    t.string   "email"
+    t.string   "contact"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
   end
 
   create_table "conversations", :force => true do |t|
@@ -84,6 +102,24 @@ ActiveRecord::Schema.define(:version => 20120725131736) do
     t.string   "contact"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "email"
+  end
+
+  create_table "user_profiles", :force => true do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.string   "firstname"
+    t.string   "street"
+    t.integer  "house_number"
+    t.integer  "postal_code"
+    t.string   "city"
+    t.integer  "phone"
+    t.integer  "mobile"
+    t.string   "email"
+    t.text     "application"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

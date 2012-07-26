@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user_profile.name %>
+</p>
+
+<p>
+  <b>Surname:</b>
+  <%= @user_profile.surname %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @user_profile.firstname %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @user_profile.street %>
+</p>
+
+<p>
+  <b>House number:</b>
+  <%= @user_profile.house_number %>
+</p>
+
+<p>
+  <b>Postal code:</b>
+  <%= @user_profile.postal_code %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @user_profile.city %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @user_profile.phone %>
+</p>
+
+<p>
+  <b>Mobile:</b>
+  <%= @user_profile.mobile %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user_profile.email %>
+</p>
+
+<p>
+  <b>Application:</b>
+  <%= @user_profile.application %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
+<%= link_to 'OK', root_path %>

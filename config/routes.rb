@@ -1,18 +1,29 @@
 NavigationsBar::Application.routes.draw do
 
+
+
+
   root :to => "startpages#index"
 
   get "tenders/show_all" => "tenders#show_all"
+
+  get 'companyprofile' => 'company_profiles#edit', as: 'companyprofile'
+  get 'userprofile' => 'user_profiles#edit', as: 'userprofile'
+
+  resources :user_profiles
 
   resources :tenders
 
   resources :applications
 
-  devise_for :users
+  resources :company_profiles, except: [:destroy ]
+
+  devise_for :users  , :controllers => { :registrations => "registrations" }
 
   resources :users
   resources :ConversationsController
   resources :papers
+
 
   resources :conversations, only: [:index, :show, :new, :create] do
     member do

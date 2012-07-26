@@ -6,6 +6,7 @@ class ApplicationsController < ApplicationController
   def index
     @applications = current_user.applications
 
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @applications }
@@ -15,6 +16,7 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
+
     @application = Application.find(params[:id])
 
     respond_to do |format|
@@ -27,6 +29,10 @@ class ApplicationsController < ApplicationController
   # GET /applications/new.json
   def new
     @application = Application.new
+
+    @user = User.find(current_user.id)
+
+    @user_profile = @user.user_profile
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +49,9 @@ class ApplicationsController < ApplicationController
   # POST /applications.json
   def create
     @application = Application.new(params[:application])
-    @application.user = current_user
+    @user = User.find(current_user.id)
+
+    @user_profile = @user.user_profile
 
     respond_to do |format|
       if @application.save
