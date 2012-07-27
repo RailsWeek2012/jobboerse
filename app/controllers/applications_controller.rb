@@ -4,7 +4,7 @@ class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
   def index
-    @applications = current_user.application
+   @applications = current_user.applications
 
 
     respond_to do |format|

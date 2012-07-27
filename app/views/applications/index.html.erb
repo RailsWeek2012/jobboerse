@@ -4,25 +4,25 @@
 </div>
 <table class="table table-striped">
   <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:surname) %></th>
-      <th><%= model_class.human_attribute_name(:firstname) %></th>
-      <th><%= model_class.human_attribute_name(:house_number) %></th>
-      <th><%= model_class.human_attribute_name(:postal_number) %></th>
-      <th><%= model_class.human_attribute_name(:phone) %></th>
-      <th><%= model_class.human_attribute_name(:mobile) %></th>
-      <th><%= model_class.human_attribute_name(:application) %></th>
-      <th><%= model_class.human_attribute_name(:uploads) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+  <tr>
+    <th><%= model_class.human_attribute_name(:id) %></th>
+    <th><%= model_class.human_attribute_name(:user_id) %></th>
+    <th><%= model_class.human_attribute_name(:name) %></th>
+    <th><%= model_class.human_attribute_name(:surname) %></th>
+    <th><%= model_class.human_attribute_name(:firstname) %></th>
+    <th><%= model_class.human_attribute_name(:house_number) %></th>
+    <th><%= model_class.human_attribute_name(:postal_number) %></th>
+    <th><%= model_class.human_attribute_name(:phone) %></th>
+    <th><%= model_class.human_attribute_name(:mobile) %></th>
+    <th><%= model_class.human_attribute_name(:application) %></th>
+    <th><%= model_class.human_attribute_name(:uploads) %></th>
+    <th><%= model_class.human_attribute_name(:created_at) %></th>
 
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
+    <th><%=t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
   </thead>
   <tbody>
-    <% @applications.each do |application| %>
+  <% @applications.each do |application| %>
       <tr>
         <td><%= link_to application.id, application_path(application) %></td>
         <td><%= application.user_id %></td>
@@ -46,8 +46,7 @@
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
-
 
