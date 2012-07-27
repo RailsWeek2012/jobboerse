@@ -19,8 +19,12 @@ class TendersController < ApplicationController
   # GET /tenders/1
   # GET /tenders/1.json
   def show
+    @user = User.find(current_user.id)
 
-    @tender = Tender.find(params[:id])
+    @company_tenders = @user.tenders
+
+    @tender = Tender.where(:user_id => current_user.id)
+
 
     respond_to do |format|
       format.html # show.html.erb
@@ -45,23 +49,20 @@ class TendersController < ApplicationController
 
   # GET /tenders/1/edit
   def edit
-    @tender = Tender.find(params[:id])
+
+
+      @tender = Tender.find(params[:id])
   end
 
   # POST /tenders
   # POST /tenders.json
   def create
     @tender = Tender.new(params[:tender])
-    @tender.user = current_user
 
-    @user = User.find(current_user.id)
-
-    @company_profile = @user.company_profile
 
     respond_to do |format|
       if @tender.save
-        session[:tender_id] = @tender.id
-        format.html { redirect_to @tender, notice: 'Tender was successfully created.' }
+        format.html { redirect_to tenders_path, notice: 'Tender was successfully created.' }
         format.json { render json: @tender, status: :created, location: @tender }
       else
         format.html { render action: "new" }

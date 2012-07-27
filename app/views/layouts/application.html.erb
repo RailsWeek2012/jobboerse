@@ -65,7 +65,7 @@
                       <% if current_user.company_profile.present?%>
                       <li><%= link_to "Profil", companyprofile_path %></li>
                       <li><%= link_to "Job-Erstellen", new_tender_path %></li>
-                      <li><%= link_to "Job-View", tenders_path %></li>
+                      <li><%= link_to "Job-View", company_tenders_path %></li>
                       <li><%= link_to "Job-Bewerber",    '#' %></li>
                       <% end %>
                   <% else %>
@@ -110,7 +110,7 @@
         <div class="span9">
           <% if flash[:notice] %>
               <p id="notice">
-                <%= flash[:notice] %>
+                <%= flash[:error] %>
               </p>
           <% end %>
 

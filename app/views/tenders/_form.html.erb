@@ -8,6 +8,8 @@
   <%= f.input :description%>
   <%= f.input :contact ,:input_html =>{:value => @company_profile.contact}%>
   <%= f.input :email ,:input_html =>{:value => @company_profile.email}%>
+  <%= f.input :user_id, :as => :hidden,:input_html =>{:value => current_user.id}%>
+
 
     <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

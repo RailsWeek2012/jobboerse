@@ -13,7 +13,7 @@ class CompanyProfilesController < ApplicationController
   # GET /company_profiles/1
   # GET /company_profiles/1.json
   def show
-    @company_profile = CompanyProfile.find(params[:id])
+    @company_profile = CompanyProfile.find(current_user.company_profile)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -57,11 +57,11 @@ class CompanyProfilesController < ApplicationController
   # PUT /company_profiles/1
   # PUT /company_profiles/1.json
   def update
-    @company_profile = CompanyProfile.find(params[:id])
+    @company_profile = CompanyProfile.find(current_user.company_profile)
 
     respond_to do |format|
       if @company_profile.update_attributes(params[:company_profile])
-        format.html { redirect_to @company_profile, notice: 'Company profile was successfully updated.' }
+        format.html { redirect_to companyprofile_update_path, notice: 'Company profile was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

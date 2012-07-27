@@ -8,7 +8,13 @@ NavigationsBar::Application.routes.draw do
   get "tenders/show_all" => "tenders#show_all"
 
   get 'companyprofile' => 'company_profiles#edit', as: 'companyprofile'
+  get 'companyprofile_update' => 'company_profiles#show', as: 'companyprofile_update'
+  get 'tenders' => 'tenders#show', as: 'company_tenders'
+  get 'tenders_edit' => 'tenders#edit', as: "tenders_edit"
+
+
   get 'userprofile' => 'user_profiles#edit', as: 'userprofile'
+  get 'tendersedit' => 'tenders#edit', as: 'tendersedit'
 
   resources :user_profiles
 
