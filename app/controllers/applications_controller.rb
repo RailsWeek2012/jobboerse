@@ -43,6 +43,9 @@ class ApplicationsController < ApplicationController
   # GET /applications/1/edit
   def edit
     @application = Application.find(params[:id])
+    @user = User.find(current_user.id)
+
+    @user_profile = @user.user_profile
   end
 
   # POST /applications
