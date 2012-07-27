@@ -1,0 +1,51 @@
+--- Projekt Jobboerse ---
+
+--- Verwendete Gems zum Projekt Jobboerse ---
+
+- gem 'rails', '3.2.6'
+- gem 'sqlite3'
+- gem 'sass-rails',   '~> 3.2.3'
+- gem 'coffee-rails', '~> 3.2.1'
+- gem 'therubyracer', :platform => :ruby
+- gem 'uglifier', '>= 1.0.3'
+- gem 'jquery-rails'
+- gem 'debugger'
+- gem 'uglifier', '>= 1.0.3'
+- gem 'bootstrap-sass', '~> 2.0.4.0'
+- gem 'bcrypt-ruby', '~> 3.0.0'
+- gem 'devise'
+- gem 'mailboxer'
+- gem 'simple_form'
+- gem 'carrierwave'
+- gem "twitter-bootstrap-rails"
+
+Zu den verwendeten Gems, wurden die Anleitungen benutzt, die über GitHub zur Verfügung gestellt worden sind. Sowie frei verfügbare
+Anleitung unter RailsCast.
+
+Desweiteren wurden Teile der Folien zu Rails aus der Einführung verwendet.
+
+--- Zum implementieren PM-System ---
+
+- Verwendung der Mailboxer Sample-Application
+- Link zu Mailboxer Sample-Application "https://github.com/RKushnir/mailboxer-app"
+
+- Folgende Source-Dateien des Projektes Jobboerse entsprechen Vollständig bzw. Größtenteils der Mailboxer Sample-Application
+
+	- Controller:
+		- application_controller.rb
+		- applications_controller.rb
+		- application_helper.rb
+	-Model:	
+		- user.rb
+	- Views conversation
+		- conversation.html.erb
+		- _form.html.erb
+		- index.html.erb
+		- new.html_erb
+		- show.html.erb
+	- Views	layouts
+		- application.html.erb
+	- Views messages
+		- _form.html.erb
+		
+			
