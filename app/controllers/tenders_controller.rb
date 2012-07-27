@@ -40,7 +40,7 @@ class TendersController < ApplicationController
     @user = User.find(current_user.id)
 
     @company_profile = @user.company_profile
-
+   
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @tender }
@@ -52,6 +52,10 @@ class TendersController < ApplicationController
 
 
       @tender = Tender.find(params[:id])
+      @user = User.find(current_user.id)
+
+    @company_profile = @user.company_profile
+      
   end
 
   # POST /tenders

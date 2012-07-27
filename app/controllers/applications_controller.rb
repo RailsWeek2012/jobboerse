@@ -4,7 +4,7 @@ class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
   def index
-    @applications = current_user.applications
+    @applications = current_user.application
 
 
     respond_to do |format|
@@ -43,6 +43,9 @@ class ApplicationsController < ApplicationController
   # GET /applications/1/edit
   def edit
     @application = Application.find(params[:id])
+    @user = User.find(current_user.id)
+
+    @user_profile = @user.user_profile
   end
 
   # POST /applications

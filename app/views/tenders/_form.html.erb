@@ -1,6 +1,15 @@
 <%@title = "Neuen Job anlegen" %>
 
 <%= simple_form_for @tender, :html => { :class => 'form-horizontal' } do |f| %>
+
+    <% if @tender.errors.any? %>
+        <ul>
+          <% @tender.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+
   <%= f.input :company_name ,:input_html =>{:value => @company_profile.company_name}%>
   <%= f.input :sector %>
   <%= f.input :subject%>

@@ -2,16 +2,17 @@
 
 <%= form_for @paper, :html => {:multipart => true} do |f| %>
     <p>
-      <%= f.label :name %><br />
+      <%= f.label :name %>
       <%= f.text_field :name %>
     </p>
+
     <p>
-       <%= f.label :Anhang %>
-      <%= f.file_field :attachment %>
+      <% @pdf = "Nur PDF" %>
+       <%= f.label @pdf%>
+      <%= f.file_field :attachment  %>
     </p>
 
     <p><%= f.submit %></p>
 <% end %>
 
-<%= debug session %>
 
