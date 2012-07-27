@@ -1,6 +1,16 @@
 <%= simple_form_for(@user_profile) do |f| %>
   <%= f.error_notification %>
 
+        <% if @user_profile.errors.any? %>
+            <ul>
+              <% @user_profile.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+        <% end %>
+
+
+
     <div class="form-inputs" xmlns="http://www.w3.org/1999/html">
     <%= f.input :name %>
     <%= f.input :surname %>
